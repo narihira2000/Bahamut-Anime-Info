@@ -3,6 +3,7 @@
 
 ![](https://i.imgur.com/hUaISU7.jpg)
 
+[Download](https://github.com/narihira2000/Bahamut-Anime-Info/raw/master/Bahamut%20Anime%20Info.exe)
 <br><br>
 
 ## 1. 透過python爬蟲爬得動畫瘋上所有動畫的
