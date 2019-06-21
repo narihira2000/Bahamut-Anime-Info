@@ -10,7 +10,7 @@ import csv
 
 #建立視窗
 window=tk.Tk()
-window.title("動畫瘋動畫資訊")
+window.title("動畫瘋動畫資訊 by narihira2000")
 window.geometry("690x300")
 window.resizable(0,0)
 #window.iconbitmap("icon.ico")
