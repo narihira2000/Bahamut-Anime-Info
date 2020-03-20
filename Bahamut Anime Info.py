@@ -23,7 +23,6 @@ soup=BeautifulSoup(r.text,"html.parser")
 #得知全部頁數
 pgSel=soup.select("div.page_number a")
 pageNum=(int)(pgSel[4].text)
-
 #List初始化
 animeInfo=[]
 titleList=[]
@@ -41,13 +40,13 @@ for count in range(pageNum):
     
 	#分別抓取標題、總觀看數、年份資訊、集數
     sel=soup.select("div.info b")
-    sel2=soup.select("span.newanime-count span")
+    sel2=soup.select("span.newanime-count")
     sel3=soup.select("div.info")
-    
     for s in sel:
         titleList.append(s.text)
     for s2 in sel2:
-        viewList.append(s2.text)
+        if(s2.text.find("雙語")==-1):
+            viewList.append(s2.text)
     for s3 in sel3:
 		#因為抓下來的格式是"年份：2019/04 共10集"，因此要進行字串分割處理
         yearStr=(s3.text).split("年份：",1)
@@ -64,11 +63,9 @@ for count in range(pageNum):
         yearList.append(yearInt)
         monthList.append(monthInt)
         epList.append(epInt)
-
     
 #因為觀看數破萬會寫成中文(ex.2.2萬)，因此需要判斷是否有中文參雜其中並進行處理
 for i in range(len(titleList)):
-    
     avgView=0
     allView=0
 
