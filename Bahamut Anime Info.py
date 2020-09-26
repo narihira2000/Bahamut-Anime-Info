@@ -45,7 +45,7 @@ for count in range(pageNum):
     for s in sel:
         titleList.append(s.text)
     for s2 in sel2:
-        if(s2.text.find("雙語")==-1):
+        if(s2.text.find("萬")!=-1 or s2.text.find("統計中")!=-1 or s2.text.isnumeric() ):
             viewList.append(s2.text)
     for s3 in sel3:
 		#因為抓下來的格式是"年份：2019/04 共10集"，因此要進行字串分割處理
