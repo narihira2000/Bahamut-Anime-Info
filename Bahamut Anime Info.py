@@ -39,9 +39,10 @@ for count in range(pageNum):
     soup=BeautifulSoup(r.text,"html.parser")
     
 	#分別抓取標題、總觀看數、年份資訊、集數
-    sel=soup.select("div.info b")
-    sel2=soup.select("span.newanime-count")
-    sel3=soup.select("div.info")
+    sel=soup.select("p.theme-name")
+    sel2=soup.select("div.show-view-number p")
+    sel3=soup.select("p.theme-time")
+    sel4=soup.select("span.theme-number")
     for s in sel:
         titleList.append(s.text)
     for s2 in sel2:
@@ -54,14 +55,16 @@ for count in range(pageNum):
         yearr=yearStr[1].split("/",1)
         yearInt=(int)(yearr[0])
         
-        monthh=yearr[1].split("共",1)
-        monthInt=(int)(monthh[0])
-        
-        epp=monthh[1].split("集",1)
-        epInt=(int)(epp[0])
-        
+        monthInt=(int)(yearr[1])
+
         yearList.append(yearInt)
         monthList.append(monthInt)
+    for s4 in sel4:
+        epp=(s4.text).split("第",1)
+        epp=epp[1].split("集",1)
+        epInt=(int)(epp[0])
+        
+        
         epList.append(epInt)
     
 #因為觀看數破萬會寫成中文(ex.2.2萬)，因此需要判斷是否有中文參雜其中並進行處理
