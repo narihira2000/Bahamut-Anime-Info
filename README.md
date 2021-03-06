@@ -1,6 +1,8 @@
 # 巴哈姆特動畫瘋 動畫資訊
 取得動畫瘋的一些動畫相關資訊
 
+> 20210307更新: 巴哈開始擋爬蟲了，目前程式失效中:P
+
 ![](https://i.imgur.com/hUaISU7.jpg)
 
 [Download](https://github.com/narihira2000/Bahamut-Anime-Info/raw/master/Bahamut%20Anime%20Info.exe)
