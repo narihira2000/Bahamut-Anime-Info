@@ -17,7 +17,7 @@ window.resizable(0,0)
 
 #將第一頁抓下來
 url = "https://ani.gamer.com.tw/animeList.php"
-r = requests.get(url)
+r = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"})
 soup=BeautifulSoup(r.text,"html.parser")
 
 #得知全部頁數
@@ -35,7 +35,7 @@ epList=[]
 for count in range(pageNum):
     #抓取特定頁數的資料
     url = "https://ani.gamer.com.tw/animeList.php?page="+(str)(count+1)+"&c=0&sort=0"
-    r = requests.get(url)
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0"})
     soup=BeautifulSoup(r.text,"html.parser")
     
 	#分別抓取標題、總觀看數、年份資訊、集數
